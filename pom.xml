@@ -12,7 +12,7 @@
         <appengine.app.version>1</appengine.app.version>
         <appengine.api.version>1.9.48</appengine.api.version>
         <appengine.api.stubs.version>1.9.30</appengine.api.stubs.version>
-        <appengine.endpoints.version>1.9.30</appengine.endpoints.version>
+        <appengine.endpoints.version>1.9.48</appengine.endpoints.version>
         <endpoints.framework.version>0.1.0-SNAPSHOT</endpoints.framework.version>
         <appengine.testing.version>1.9.30</appengine.testing.version>
         <appengine.maven.version>1.0.0</appengine.maven.version>
