@@ -91,9 +91,26 @@
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
         <plugins>
             <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.8.v20160314</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                          <outputDirectory>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/webapp/WEB-INF</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
@@ -109,7 +126,7 @@
                 <version>0.1.0-SNAPSHOT</version>
                 <configuration>
                     <webappDir>src/main/webapp</webappDir>
-                    <discoveryDocDir>${project.build.directory}/generated-sources/appengine-endpoints/helloworld-v1-rest.discovery</discoveryDocDir>
+                    <discoveryDocDir>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF</discoveryDocDir>
                 </configuration>
                 <executions>
                     <execution>
