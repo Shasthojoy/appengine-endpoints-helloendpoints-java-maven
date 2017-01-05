@@ -71,7 +71,6 @@
 
 
         <!-- Test Dependencies -->
-        <!--
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -96,7 +95,6 @@
             <version>${appengine.api.stubs.version}</version>
             <scope>test</scope>
         </dependency>
-        -->
     </dependencies>
 
     <build>
