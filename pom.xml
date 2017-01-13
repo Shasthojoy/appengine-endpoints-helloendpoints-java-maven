@@ -11,10 +11,10 @@
     <properties>
         <appengine.app.version>1</appengine.app.version>
         <appengine.api.version>1.9.48</appengine.api.version>
-        <appengine.api.stubs.version>1.9.30</appengine.api.stubs.version>
+        <appengine.api.stubs.version>1.9.48</appengine.api.stubs.version>
         <appengine.endpoints.version>1.9.48</appengine.endpoints.version>
+        <appengine.testing.version>1.9.48</appengine.testing.version>
         <endpoints.framework.version>1.0.0-beta2</endpoints.framework.version>
-        <appengine.testing.version>1.9.30</appengine.testing.version>
         <appengine.maven.version>1.0.0</appengine.maven.version>
         <javax.inject.version>1</javax.inject.version>
         <jdo.api.version>3.0.1</jdo.api.version>
@@ -138,6 +138,7 @@
                 <configuration>
                     <webappDir>src/main/webapp</webappDir>
                     <discoveryDocDir>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF</discoveryDocDir>
+                    <clientLibDir>.</clientLibDir>
                 </configuration>
                 <executions>
                     <execution>

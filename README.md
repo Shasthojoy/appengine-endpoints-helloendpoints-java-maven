@@ -25,10 +25,10 @@ Greeting" functionality.
 [src/main/webapp/js/base.js](src/main/webapp/js/base.js) to reflect the web client ID you have registered in the
 [Credentials on Developers Console for OAuth 2.0 client IDs][6].
 1. `mvn clean install`
-1. Run the application with `mvn appengine:devserver`, and ensure it's running
+1. Run the application with `mvn appengine:run`, and ensure it's running
    by visiting your local server's address (by default [localhost:8080][5].)
-1. Get the client library with `mvn appengine:endpoints_get_client_lib` (it will generate a zip file named `helloworld-v1-java.zip` in the root of your project.)
-1. Deploy your application to Google App Engine with `mvn appengine:update`
+1. Get the client library with `mvn endpoints-framework:clientLibs` (it will generate a zip file named `helloworld-v1-java.zip` in the root of your project.)
+1. Deploy your application to Google App Engine with `mvn appengine:deploy`
 
 
 [1]: https://developers.google.com/appengine
