@@ -123,7 +123,6 @@
                 <configuration>
                     <webappDir>src/main/webapp</webappDir>
                     <discoveryDocDir>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF</discoveryDocDir>
-                    <clientLibDir>.</clientLibDir>
                 </configuration>
                 <executions>
                     <execution>
