@@ -29,7 +29,7 @@ dependencies {
 
   // Uncomment to use Endpoints Framework v1.0
   // compile group: 'com.google.appengine', name: 'appengine-endpoints', version: '1.9.48'
-  // End of Endpoints Framework v1.0 
+  // End of Endpoints Framework v1.0
 
   // Endpoints Framework v2.0
   compile "com.google.endpoints:endpoints-framework:+"
