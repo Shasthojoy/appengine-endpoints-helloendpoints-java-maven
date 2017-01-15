@@ -9,12 +9,17 @@
     <artifactId>helloendpoints</artifactId>
 
     <properties>
-        <appengine.app.version>1</appengine.app.version>
+        <app.id>helloendpoints</app.id>
+        <app.version>1</app.version>
+        <!-- Uncomment to use Endpoints Framework v1.0 -->
+        <!--
         <appengine.endpoints.version>1.9.48</appengine.endpoints.version>
+        -->
+        <!-- End of Endpoints Framework v1.0 -->
         <appengine.maven.version>1.0.0</appengine.maven.version>
         <endpoints.framework.maven.version>1.0.0-beta2</endpoints.framework.maven.version>
         <endpoints.framework.version>2.0.0-beta.12</endpoints.framework.version>
-        <guava.version>21.0</guava.version>
+        <guava.version>20.0</guava.version>
         <google.api.client.version>1.22.0</google.api.client.version>
         <javax.inject.version>1</javax.inject.version>
         <jdo.api.version>3.0.1</jdo.api.version>
