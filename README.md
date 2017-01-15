@@ -17,19 +17,63 @@ A "hello world" application for Google Cloud Endpoints in Java.
 1. Update the value of `application` in `appengine-web.xml` to the app ID you
    have registered in the App Engine admin console and would like to use to host
    your instance of this sample.
-1. Optional step: These sub steps are not required but will enable the "Authenticated
+
+1. [Optional]: These sub steps are not required but will enable the "Authenticated
 Greeting" functionality.
+
    1. Update the values in [src/main/java/com/example/helloendpoints/Constants.java](src/main/java/com/example/helloendpoints/Constants.java) to reflect the web client ID you have registered in the
 [Credentials on Developers Console for OAuth 2.0 client IDs][6].
+
     1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID` in
 [src/main/webapp/js/base.js](src/main/webapp/js/base.js) to reflect the web client ID you have registered in the
 [Credentials on Developers Console for OAuth 2.0 client IDs][6].
-1. `mvn clean install`
-1. Run the application with `mvn appengine:run`, and ensure it's running
-   by visiting your local server's address (by default [localhost:8080][5].)
-1. Get the client library with `mvn endpoints-framework:clientLibs` (it will generate a zip file named `helloworld-v1-java.zip` in the root of your project.)
-1. Deploy your application to Google App Engine with `mvn appengine:deploy`
 
+1. [Optional]: Use Endpoints Framework v1.0.
+
+    1. Uncomment commented Endpoints Framework v1.0 sections and comment
+        Endpoints Framework v2.0 sections in the following files.
+
+      ```
+        pom.xml
+        build.gradle
+        src/main/webapp/WEB-INF/web.xml
+      ```
+
+###  Maven
+
+1. Build a fresh binary with
+
+    `mvn clean compile`
+
+1. Run the application locally at [localhost:8080][5] with
+
+    `mvn appengine:run`
+
+1. Generate the client library in a zip file named `helloworld-v1-java.zip` with
+
+    `mvn endpoints-framework:clientLibs`
+
+1. Deploy your application to Google App Engine with
+
+    `mvn appengine:deploy`
+
+### Gradle
+
+1. Build a fresh binary
+
+    `gradle clean compileJava
+
+1. Run the application locally at [localhost:8080][5] with
+
+    `gradle appengineRun`
+
+1. Generate the client library in a zip file named `helloworld-v1-java.zip` with
+
+    `gradle endpointsClientLibs`
+
+1. Deploy your application to Google App Engine with
+
+    `gradle appengineDeploy`
 
 [1]: https://developers.google.com/appengine
 [2]: http://java.com/en/

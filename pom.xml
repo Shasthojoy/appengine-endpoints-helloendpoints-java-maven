@@ -10,47 +10,59 @@
 
     <properties>
         <appengine.app.version>1</appengine.app.version>
-        <appengine.api.version>1.9.48</appengine.api.version>
-        <appengine.api.stubs.version>1.9.48</appengine.api.stubs.version>
         <appengine.endpoints.version>1.9.48</appengine.endpoints.version>
-        <appengine.testing.version>1.9.48</appengine.testing.version>
-        <endpoints.framework.version>1.0.0-beta2</endpoints.framework.version>
         <appengine.maven.version>1.0.0</appengine.maven.version>
+        <endpoints.framework.maven.version>1.0.0-beta2</endpoints.framework.maven.version>
+        <endpoints.framework.version>2.0.0-beta.12</endpoints.framework.version>
+        <guava.version>21.0</guava.version>
+        <google.api.client.version>1.22.0</google.api.client.version>
         <javax.inject.version>1</javax.inject.version>
         <jdo.api.version>3.0.1</jdo.api.version>
-        <junit.version>4.11</junit.version>
-        <google.api.client.version>1.22.0</google.api.client.version>
         <maven.compiler.version>3.5.1</maven.compiler.version>
         <maven.compiler.source.version>1.7</maven.compiler.source.version>
         <maven.compiler.target.version>1.7</maven.compiler.target.version>
         <maven.resources.version>3.0.2</maven.resources.version>
         <maven.war.version>2.4</maven.war.version>
         <mojo.versions.maven.version>2.1</mojo.versions.maven.version>
-        <mockito.version>1.9.5</mockito.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <servlet.api.version>2.5</servlet.api.version>
     </properties>
 
     <prerequisites>
-        <maven>3.1.0</maven>
+        <maven>3.3.9</maven>
     </prerequisites>
 
     <dependencies>
         <!-- Compile/runtime dependencies -->
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>${appengine.api.version}</version>
-        </dependency>
-        <dependency>
+        <!-- Uncomment to use Endpoints Framework v1.0 -->
+        <!--<dependency>
               <groupId>com.google.appengine</groupId>
               <artifactId>appengine-endpoints</artifactId>
               <version>${appengine.endpoints.version}</version>
+        </dependency>-->
+        <!-- End of Endpoints Framework v1.0 -->
+        <!-- Endpoints Framework v2.0 -->
+        <dependency>
+            <groupId>com.google.endpoints</groupId>
+            <artifactId>endpoints-framework</artifactId>
+            <version>${endpoints.framework.version}</version>
         </dependency>
+        <!-- End of Endpoints Framework v2.0 -->
         <dependency>
             <groupId>com.google.api-client</groupId>
             <artifactId>google-api-client</artifactId>
             <version>${google.api.client.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava-jdk5</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -67,33 +79,6 @@
             <groupId>javax.jdo</groupId>
             <artifactId>jdo-api</artifactId>
             <version>${jdo.api.version}</version>
-        </dependency>
-
-
-        <!-- Test Dependencies -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-testing</artifactId>
-            <version>${appengine.testing.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-stubs</artifactId>
-            <version>${appengine.api.stubs.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -134,7 +119,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>endpoints-framework-maven-plugin</artifactId>
-                <version>${endpoints.framework.version}</version>
+                <version>${endpoints.framework.maven.version}</version>
                 <configuration>
                     <webappDir>src/main/webapp</webappDir>
                     <discoveryDocDir>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF</discoveryDocDir>
@@ -149,7 +134,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
