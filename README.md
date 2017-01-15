@@ -59,7 +59,7 @@ Greeting" functionality.
 
 ### Gradle
 
-1. Build a fresh binary
+1. Build a fresh binary with
 
     `gradle clean compileJava`
 
