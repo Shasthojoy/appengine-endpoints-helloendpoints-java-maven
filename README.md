@@ -61,7 +61,7 @@ Greeting" functionality.
 
 1. Build a fresh binary
 
-    `gradle clean compileJava
+    `gradle clean compileJava`
 
 1. Run the application locally at [localhost:8080][5] with
 
