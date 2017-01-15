@@ -9,11 +9,11 @@
         <!-- Endpoints Framework v2.0 -->
         <servlet-name>EndpointsServlet</servlet-name>
         <servlet-class>com.google.api.server.spi.EndpointsServlet</servlet-class>
+        <!-- End of Endpoints Framework v2.0 -->
         <init-param>
             <param-name>services</param-name>
             <param-value>com.example.helloendpoints.Greetings</param-value>
         </init-param>
-        <!-- End of Endpoints Framework v2.0 -->
         <init-param>
             <param-name>restricted</param-name>
             <param-value>false</param-value>
