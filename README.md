@@ -28,10 +28,10 @@ Greeting" functionality.
 [src/main/webapp/js/base.js](src/main/webapp/js/base.js) to reflect the web client ID you have registered in the
 [Credentials on Developers Console for OAuth 2.0 client IDs][6].
 
-1. [Optional]: Use Endpoints Framework v1.0.
+1. [Optional]: Use Endpoints Frameworks v1.0.
 
-    1. Uncomment commented Endpoints Framework v1.0 sections and comment
-        Endpoints Framework v2.0 sections in the following files.
+    1. Uncomment commented Endpoints Frameworks v1.0 sections and comment
+        Endpoints Frameworks v2.0 sections in the following files.
 
       ```
         pom.xml
